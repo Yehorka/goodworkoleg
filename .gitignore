@@ -1,0 +1,12 @@
+env
+**/*.pyc
+**/__pycache__
+media
+.DS_Store
+*.env
+
+!.gitignore
+!.travis.yml
+/.env
+/.vscode
+/.idea
