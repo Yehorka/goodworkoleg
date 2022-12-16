@@ -254,35 +254,35 @@ class CheckoutViewTest(TestCase):
         self.assertEqual(response_stripe.url, '/payment/stripe/')
         self.assertEqual(response_paypal.url, '/payment/paypal/')
 
-    # def test_selenium_Stripe(self):
-    #     self.driver.get("http://127.0.0.1:8000/accounts/login/?next=/checkout/")
-    #     self.driver.find_element(by=By.NAME, value='login').send_keys('LOL')
-    #     self.driver.find_element(by=By.NAME, value='password').send_keys('123456')
-    #     self.driver.find_element(by=By.CLASS_NAME, value='btn-primary').click()
-    #     self.driver.find_element(value='id_street_address').send_keys('street_address')
-    #     self.driver.find_element(value='id_apartment_address').send_keys('apartment_address')
-    #     Select(self.driver.find_element(value='id_country')).select_by_index(1)
-    #     Select(self.driver.find_element(value='state')).select_by_index(1)
-    #     self.driver.find_element(value='id_zip').send_keys('zip')
-    #     self.driver.find_element(value='Stripe').click()
-    #     self.driver.find_element(by=By.CLASS_NAME, value='btn-primary').click()
-    #
-    #     self.assertEqual("http://127.0.0.1:8000/payment/stripe/", self.driver.current_url)
-    #
-    # def test_selenium_PayPal(self):
-    #     self.driver.get("http://127.0.0.1:8000/accounts/login/?next=/checkout/")
-    #     self.driver.find_element(by=By.NAME, value='login').send_keys('LOL')
-    #     self.driver.find_element(by=By.NAME, value='password').send_keys('123456')
-    #     self.driver.find_element(by=By.CLASS_NAME, value='btn-primary').click()
-    #     self.driver.find_element(value='id_street_address').send_keys('street_address')
-    #     self.driver.find_element(value='id_apartment_address').send_keys('apartment_address')
-    #     Select(self.driver.find_element(value='id_country')).select_by_index(1)
-    #     Select(self.driver.find_element(value='state')).select_by_index(1)
-    #     self.driver.find_element(value='id_zip').send_keys('zip')
-    #     self.driver.find_element(value='PayPal').click()
-    #     self.driver.find_element(by=By.CLASS_NAME, value='btn-primary').click()
-    #
-    #     self.assertEqual("http://127.0.0.1:8000/payment/paypal/", self.driver.current_url)
+    def test_selenium_Stripe(self):
+        self.driver.get("http://127.0.0.1:8000/accounts/login/?next=/checkout/")
+        self.driver.find_element(by=By.NAME, value='login').send_keys('LOL')
+        self.driver.find_element(by=By.NAME, value='password').send_keys('123456')
+        self.driver.find_element(by=By.CLASS_NAME, value='btn-primary').click()
+        self.driver.find_element(value='id_street_address').send_keys('street_address')
+        self.driver.find_element(value='id_apartment_address').send_keys('apartment_address')
+        Select(self.driver.find_element(value='id_country')).select_by_index(1)
+        Select(self.driver.find_element(value='state')).select_by_index(1)
+        self.driver.find_element(value='id_zip').send_keys('zip')
+        self.driver.find_element(value='Stripe').click()
+        self.driver.find_element(by=By.CLASS_NAME, value='btn-primary').click()
+
+        self.assertEqual("http://127.0.0.1:8000/payment/stripe/", self.driver.current_url)
+
+    def test_selenium_PayPal(self):
+        self.driver.get("http://127.0.0.1:8000/accounts/login/?next=/checkout/")
+        self.driver.find_element(by=By.NAME, value='login').send_keys('LOL')
+        self.driver.find_element(by=By.NAME, value='password').send_keys('123456')
+        self.driver.find_element(by=By.CLASS_NAME, value='btn-primary').click()
+        self.driver.find_element(value='id_street_address').send_keys('street_address')
+        self.driver.find_element(value='id_apartment_address').send_keys('apartment_address')
+        Select(self.driver.find_element(value='id_country')).select_by_index(1)
+        Select(self.driver.find_element(value='state')).select_by_index(1)
+        self.driver.find_element(value='id_zip').send_keys('zip')
+        self.driver.find_element(value='PayPal').click()
+        self.driver.find_element(by=By.CLASS_NAME, value='btn-primary').click()
+
+        self.assertEqual("http://127.0.0.1:8000/payment/paypal/", self.driver.current_url)
 
     def tearDown(self):
         self.driver.quit()
