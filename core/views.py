@@ -16,6 +16,7 @@ from django.shortcuts import render_to_response
 import random
 import string
 import stripe
+
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
 
@@ -317,4 +318,3 @@ def remove_single_item_from_cart(request, slug):
         messages.info(request, "u don't have an active order.")
         return redirect("core:product", slug=slug)
     return redirect("core:product", slug=slug)
-
